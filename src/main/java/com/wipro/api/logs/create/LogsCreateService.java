@@ -1,5 +1,6 @@
 package com.wipro.api.logs.create;
 
+import com.wipro.api.logs.common.exceptions.LogRequestException;
 import com.wipro.api.logs.domain.log.Log;
 import com.wipro.api.logs.domain.log.LogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ public class LogsCreateService {
     @Autowired
     private LogRepository repository;
 
-    public Log insert(Log obj){
+    public Log insert(Log obj) throws LogRequestException {
         return repository.save(obj);
     }
 

@@ -1,6 +1,5 @@
 package com.wipro.api.logs.domain.log;
 
-import com.wipro.api.logs.search.LogsSearchRequest;
 import lombok.Data;
 
 import javax.persistence.*;

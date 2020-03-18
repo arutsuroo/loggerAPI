@@ -1,5 +1,7 @@
 package com.wipro.api.logs.create;
 
+import com.wipro.api.logs.common.exceptions.LogExceptionHandler;
+import com.wipro.api.logs.common.exceptions.LogRequestException;
 import com.wipro.api.logs.domain.log.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,7 +24,7 @@ public class LogsCreateController {
     private LogsCreateMapper mapper;
 
     @PostMapping
-    public ResponseEntity<LogsCreateResponse> insert(@RequestBody @Valid LogsCreateRequest obj){
+    public ResponseEntity<LogsCreateResponse> insert(@RequestBody @Valid LogsCreateRequest obj) throws LogRequestException {
         Log log = service.insert(mapper.toLogs(obj));
         LogsCreateResponse response = mapper.toLogsDto(log);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
