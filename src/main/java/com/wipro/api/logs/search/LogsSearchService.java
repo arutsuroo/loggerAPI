@@ -18,7 +18,7 @@ public class LogsSearchService {
     @Autowired
     private LogRepository repository;
 
-    public List<Log> getAll(Integer pageNo, Integer pageSize, String sortBy){
+    public List<Log> getAllLogs(Integer pageNo, Integer pageSize, String sortBy){
         Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
 
         Page<Log> pagedResult = repository.findAll(paging);

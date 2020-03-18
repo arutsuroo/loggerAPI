@@ -1,13 +1,11 @@
 package com.wipro.api.logs.domain.log;
 
-import com.wipro.api.logs.domain.request.Request;
 import com.wipro.api.logs.search.LogsSearchRequest;
 import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
-import java.util.Objects;
 
 
 @Entity
@@ -27,11 +25,7 @@ public class Log {
     @NotNull
     private String message;
 
-    @ManyToOne
-    private Request request;
+//    @ManyToOne
+//    private Request request;
 
-    @Override
-    public int hashCode(){
-        return Objects.hash(this.getMessage());
-    }
 }

@@ -12,4 +12,10 @@ public class LogsSearchRequest {
     private LogsSearchQueryParams field;
     private LogsSearchQueryParams value;
 
+    @Data
+    class LogsSearchQueryParams{
+        private String field;
+        private String value;
+    }
+
 }
